@@ -31,9 +31,10 @@ def create_charts(test_results):
     workload_results = {}
     for test_result in test_results:
         result = json.load(open(test_result))
+        title = '%s-%s' % (result['workload'], result['driver'])
         if not result['workload'] in workload_results:
-            workload_results[result['workload']] = []
-        workload_results[result['workload']].append(result)
+            workload_results[title] = []
+        workload_results[title].append(result)
 
     for workload, results in workload_results.items():
         print('Generating charts for', workload)
@@ -74,7 +75,7 @@ def create_chart(workload, title, y_label, time_series):
         chart.add(label, [(10*x, y) for x, y in enumerate(values)])
 
     chart.range = (0, max(chain(* [l for (x, l) in time_series])) * 1.20)
-    chart.render_to_file('%s - %s.svg' % (workload, title))
+    chart.render_to_file('output/svg/%s - %s.svg' % (workload, title))
 
 
 def create_quantile_chart(workload, title, y_label, time_series):
@@ -99,7 +100,7 @@ def create_quantile_chart(workload, title, y_label, time_series):
         xy_values = [(math.log10(100 / (100 - x)), y) for x, y in values if x <= 99.999]
         chart.add(label, xy_values)
 
-    chart.render_to_file('%s - %s.svg' % (workload, title))
+    chart.render_to_file('output/svg/%s - %s.svg' % (workload, title))
 
 
 if __name__ == '__main__':
