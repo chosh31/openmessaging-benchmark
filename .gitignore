@@ -5,9 +5,9 @@
 target
 /.metadata/
 *.pyc
-*.svg
+# *.svg
 core/*.json
-*.json
+# *.json
 *.retry
 *.pem
 **/.terraform

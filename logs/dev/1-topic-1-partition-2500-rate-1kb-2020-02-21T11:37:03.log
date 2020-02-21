@@ -1,0 +1,6 @@
+11:37:10.950 [main] INFO - Starting benchmark with config: {
+  "drivers" : [ "driver-kafka/kafka-dev.yaml" ],
+  "workers" : null,
+  "workersFile" : null,
+  "workloads" : [ "workloads/1-topic-1-partition-2500-rate-1kb.yaml" ]
+}

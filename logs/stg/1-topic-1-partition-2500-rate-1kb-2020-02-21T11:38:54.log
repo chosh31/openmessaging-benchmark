@@ -1,0 +1,302 @@
+11:38:58.697 [main] INFO - Starting benchmark with config: {
+  "drivers" : [ "driver-kafka/kafka-stg.yaml" ],
+  "workers" : null,
+  "workersFile" : null,
+  "workloads" : [ "workloads/1-topic-1-partition-2500-rate-1kb.yaml" ]
+}
+11:38:58.890 [main] INFO - Workloads: {
+  "1-topic-1-partition-2500-rate-1kb" : {
+    "name" : "1 topic / 1 partition / 2500 rate / 1Kb",
+    "topics" : 1,
+    "partitionsPerTopic" : 1,
+    "keyDistributor" : "NO_KEY",
+    "messageSize" : 1024,
+    "payloadFile" : "payload/payload-1Kb.data",
+    "subscriptionsPerTopic" : 1,
+    "producersPerTopic" : 1,
+    "consumerPerSubscription" : 1,
+    "producerRate" : 2500,
+    "consumerBacklogSizeGB" : 0,
+    "testDurationMinutes" : 15
+  }
+}
+11:38:59.013 [main] INFO - --------------- WORKLOAD : 1 topic / 1 partition / 2500 rate / 1Kb --- DRIVER : Kafka-Stg---------------
+11:38:59.285 [main] INFO - Driver: {
+  "name" : "Kafka-Stg",
+  "driverClass" : "io.openmessaging.benchmark.driver.kafka.KafkaBenchmarkDriver"
+}
+11:38:59.316 [main] INFO - AdminClientConfig values: 
+	bootstrap.servers = [10.10.21.215:9092, 10.10.38.67:9092, 10.10.40.186:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+11:38:59.591 [main] INFO - Kafka version : 1.0.0
+11:38:59.592 [main] INFO - Kafka commitId : aaa7af6d4a11b29d
+11:38:59.620 [main] INFO - ProducerConfig values: 
+	acks = all
+	batch.size = 131072
+	bootstrap.servers = [10.10.21.215:9092, 10.10.38.67:9092, 10.10.40.186:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+11:38:59.776 [main] INFO - Kafka version : 1.0.0
+11:38:59.776 [main] INFO - Kafka commitId : aaa7af6d4a11b29d
+11:39:00.062 [main] INFO - Created 1 topics in 279.54362 ms
+11:39:00.062 [main] INFO - Created 1 topics in 280.246475 ms
+11:39:00.080 [main] INFO - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.10.21.215:9092, 10.10.38.67:9092, 10.10.40.186:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sub-000-dviQx_o
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+11:39:00.126 [main] INFO - Kafka version : 1.0.0
+11:39:00.127 [main] INFO - Kafka commitId : aaa7af6d4a11b29d
+11:39:00.133 [main] INFO - Created 1 consumers in 69.739292 ms
+11:39:00.133 [main] INFO - Created 1 consumers in 69.949843 ms
+11:39:00.136 [main] INFO - Created 1 producers in 2.555162 ms
+11:39:00.137 [main] INFO - Created 1 producers in 2.836442 ms
+11:39:00.137 [main] INFO - Waiting for consumers to be ready
+11:39:00.209 [pool-2-thread-1] INFO - [Consumer clientId=consumer-1, groupId=sub-000-dviQx_o] Discovered coordinator 10.10.40.186:9092 (id: 2147483544 rack: null)
+11:39:00.211 [pool-2-thread-1] INFO - [Consumer clientId=consumer-1, groupId=sub-000-dviQx_o] Revoking previously assigned partitions []
+11:39:00.212 [pool-2-thread-1] INFO - [Consumer clientId=consumer-1, groupId=sub-000-dviQx_o] (Re-)joining group
+11:39:03.289 [pool-2-thread-1] INFO - [Consumer clientId=consumer-1, groupId=sub-000-dviQx_o] Successfully joined group with generation 1
+11:39:03.291 [pool-2-thread-1] INFO - [Consumer clientId=consumer-1, groupId=sub-000-dviQx_o] Setting newly assigned partitions [test-topic-HVpovSA-0000-0]
+11:39:03.408 [main] INFO - All consumers are ready
+11:39:03.419 [main] INFO - ----- Starting warm-up traffic ------
+11:39:13.589 [main] INFO - Pub rate  2280.5 msg/s /  2.2 Mb/s | Cons rate  1866.6 msg/s /  1.8 Mb/s | Backlog:  4.2 K | Pub Latency (ms) avg: 1528.1 - 50%: 1521.9 - 99%: 1997.8 - 99.9%: 2022.9 - Max: 2031.5
+11:39:23.695 [main] INFO - Pub rate  2156.6 msg/s /  2.1 Mb/s | Cons rate  2131.5 msg/s /  2.1 Mb/s | Backlog:  4.4 K | Pub Latency (ms) avg: 2420.7 - 50%: 2342.1 - 99%: 3322.5 - 99.9%: 3350.5 - Max: 3359.3
+11:39:33.788 [main] INFO - Pub rate  2223.2 msg/s /  2.2 Mb/s | Cons rate  1948.8 msg/s /  1.9 Mb/s | Backlog:  7.2 K | Pub Latency (ms) avg: 3019.7 - 50%: 2950.0 - 99%: 4195.6 - 99.9%: 4238.5 - Max: 4246.9
+11:39:43.892 [main] INFO - Pub rate  2095.6 msg/s /  2.0 Mb/s | Cons rate  2095.6 msg/s /  2.0 Mb/s | Backlog:  7.2 K | Pub Latency (ms) avg: 5017.6 - 50%: 5269.4 - 99%: 5709.5 - 99.9%: 5958.0 - Max: 5966.7
+11:39:53.993 [main] INFO - Pub rate  1558.5 msg/s /  1.5 Mb/s | Cons rate  1795.4 msg/s /  1.8 Mb/s | Backlog:  4.8 K | Pub Latency (ms) avg: 8030.4 - 50%: 8427.4 - 99%: 9721.4 - 99.9%: 9745.5 - Max: 9751.9
+11:40:04.127 [main] INFO - Pub rate  1520.4 msg/s /  1.5 Mb/s | Cons rate  1994.0 msg/s /  1.9 Mb/s | Backlog:  0.0 K | Pub Latency (ms) avg: 10963.1 - 50%: 10709.7 - 99%: 13591.0 - 99.9%: 13759.9 - Max: 13766.0
+11:40:04.291 [main] INFO - ----- Aggregated Pub Latency (ms) avg: 4669.1 - 50%: 3219.9 - 95%: 10753.3 - 99%: 12914.9 - 99.9%: 13901.4 - 99.99%: 13943.9 - Max: 13948.6
+11:40:04.671 [main] INFO - ----- Starting benchmark traffic ------
+11:40:14.716 [main] INFO - Pub rate  2526.9 msg/s /  2.5 Mb/s | Cons rate  2099.1 msg/s /  2.0 Mb/s | Backlog:  4.3 K | Pub Latency (ms) avg: 14203.3 - 50%: 14252.9 - 99%: 14456.9 - 99.9%: 14477.7 - Max: 14485.8
+11:40:24.826 [main] INFO - Pub rate  1819.5 msg/s /  1.8 Mb/s | Cons rate  2181.3 msg/s /  2.1 Mb/s | Backlog:  0.6 K | Pub Latency (ms) avg: 14659.4 - 50%: 14691.6 - 99%: 15845.2 - 99.9%: 15848.7 - Max: 15919.9
+11:40:34.934 [main] INFO - Pub rate  2120.3 msg/s /  2.1 Mb/s | Cons rate  2132.8 msg/s /  2.1 Mb/s | Backlog:  0.5 K | Pub Latency (ms) avg: 15883.7 - 50%: 15953.7 - 99%: 16283.5 - 99.9%: 16286.4 - Max: 16320.6
+11:40:45.058 [main] INFO - Pub rate  2202.7 msg/s /  2.2 Mb/s | Cons rate  1991.1 msg/s /  1.9 Mb/s | Backlog:  2.6 K | Pub Latency (ms) avg: 15695.6 - 50%: 15401.3 - 99%: 17288.8 - 99.9%: 17298.4 - Max: 17351.0
+11:40:55.184 [main] INFO - Pub rate  2029.7 msg/s /  2.0 Mb/s | Cons rate  2191.6 msg/s /  2.1 Mb/s | Backlog:  1.0 K | Pub Latency (ms) avg: 14443.6 - 50%: 14415.4 - 99%: 15269.3 - 99.9%: 15276.1 - Max: 15314.1
+11:41:05.299 [main] INFO - Pub rate  2042.1 msg/s /  2.0 Mb/s | Cons rate  1954.9 msg/s /  1.9 Mb/s | Backlog:  1.9 K | Pub Latency (ms) avg: 15664.6 - 50%: 15682.8 - 99%: 16510.3 - 99.9%: 16597.0 - Max: 16636.2
+11:41:15.438 [main] INFO - Pub rate  2299.8 msg/s /  2.2 Mb/s | Cons rate  2088.4 msg/s /  2.0 Mb/s | Backlog:  4.0 K | Pub Latency (ms) avg: 15540.2 - 50%: 15188.8 - 99%: 16759.0 - 99.9%: 16764.4 - Max: 16792.2
+11:41:25.635 [main] INFO - Pub rate  2115.0 msg/s /  2.1 Mb/s | Cons rate  2176.8 msg/s /  2.1 Mb/s | Backlog:  3.4 K | Pub Latency (ms) avg: 14760.4 - 50%: 14702.9 - 99%: 15518.3 - 99.9%: 15525.2 - Max: 15567.7
+11:41:35.908 [main] INFO - Pub rate  2081.8 msg/s /  2.0 Mb/s | Cons rate  2314.1 msg/s /  2.3 Mb/s | Backlog:  1.0 K | Pub Latency (ms) avg: 15311.9 - 50%: 15397.0 - 99%: 16017.1 - 99.9%: 16023.0 - Max: 16064.6
+11:41:46.183 [main] INFO - Pub rate  2260.0 msg/s /  2.2 Mb/s | Cons rate  2051.2 msg/s /  2.0 Mb/s | Backlog:  3.2 K | Pub Latency (ms) avg: 14998.3 - 50%: 15070.6 - 99%: 15941.8 - 99.9%: 15944.2 - Max: 15977.5
+11:41:56.421 [main] INFO - Pub rate  2683.7 msg/s /  2.6 Mb/s | Cons rate  2117.8 msg/s /  2.1 Mb/s | Backlog:  8.9 K | Pub Latency (ms) avg: 13268.4 - 50%: 13023.7 - 99%: 14389.4 - 99.9%: 14399.4 - Max: 14446.8
+11:42:06.635 [main] INFO - Pub rate  1896.1 msg/s /  1.9 Mb/s | Cons rate  2068.5 msg/s /  2.0 Mb/s | Backlog:  7.2 K | Pub Latency (ms) avg: 13325.2 - 50%: 13011.4 - 99%: 15106.4 - 99.9%: 15284.4 - Max: 15316.0
+11:42:16.781 [main] INFO - Pub rate  2125.1 msg/s /  2.1 Mb/s | Cons rate  2187.3 msg/s /  2.1 Mb/s | Backlog:  6.6 K | Pub Latency (ms) avg: 15748.8 - 50%: 15930.4 - 99%: 16842.6 - 99.9%: 16844.0 - Max: 16874.4
+11:42:26.910 [main] INFO - Pub rate  2162.5 msg/s /  2.1 Mb/s | Cons rate  2137.3 msg/s /  2.1 Mb/s | Backlog:  6.8 K | Pub Latency (ms) avg: 15694.7 - 50%: 15522.6 - 99%: 16950.5 - 99.9%: 16956.7 - Max: 17009.5
+11:42:37.048 [main] INFO - Pub rate  2225.8 msg/s /  2.2 Mb/s | Cons rate  2039.7 msg/s /  2.0 Mb/s | Backlog:  8.7 K | Pub Latency (ms) avg: 14996.3 - 50%: 14950.6 - 99%: 15664.2 - 99.9%: 15664.6 - Max: 15700.0
+11:42:47.228 [main] INFO - Pub rate  2202.3 msg/s /  2.2 Mb/s | Cons rate  1979.6 msg/s /  1.9 Mb/s | Backlog: 11.0 K | Pub Latency (ms) avg: 14691.6 - 50%: 14685.4 - 99%: 15521.7 - 99.9%: 15542.9 - Max: 15584.8
+11:42:57.459 [main] INFO - Pub rate  2279.8 msg/s /  2.2 Mb/s | Cons rate  2168.9 msg/s /  2.1 Mb/s | Backlog: 12.1 K | Pub Latency (ms) avg: 14235.5 - 50%: 14283.1 - 99%: 15002.3 - 99.9%: 15011.9 - Max: 15073.4
+11:43:07.681 [main] INFO - Pub rate  2121.8 msg/s /  2.1 Mb/s | Cons rate  2072.4 msg/s /  2.0 Mb/s | Backlog: 12.6 K | Pub Latency (ms) avg: 13619.3 - 50%: 13668.0 - 99%: 14134.7 - 99.9%: 14576.7 - Max: 14605.2
+11:43:17.827 [main] INFO - Pub rate  2244.7 msg/s /  2.2 Mb/s | Cons rate  1686.6 msg/s /  1.6 Mb/s | Backlog: 18.3 K | Pub Latency (ms) avg: 15401.4 - 50%: 15482.2 - 99%: 15933.3 - 99.9%: 15945.9 - Max: 15980.0
+11:43:27.976 [main] INFO - Pub rate  2447.0 msg/s /  2.4 Mb/s | Cons rate  1490.6 msg/s /  1.5 Mb/s | Backlog: 28.0 K | Pub Latency (ms) avg: 14100.7 - 50%: 13681.3 - 99%: 15607.8 - 99.9%: 15629.8 - Max: 15703.6
+11:43:38.321 [main] INFO - Pub rate  2487.5 msg/s /  2.4 Mb/s | Cons rate  1901.8 msg/s /  1.9 Mb/s | Backlog: 34.0 K | Pub Latency (ms) avg: 13092.1 - 50%: 13136.2 - 99%: 13382.7 - 99.9%: 13385.4 - Max: 13436.3
+11:43:48.466 [main] INFO - Pub rate  2196.4 msg/s /  2.1 Mb/s | Cons rate  1836.9 msg/s /  1.8 Mb/s | Backlog: 37.7 K | Pub Latency (ms) avg: 13259.2 - 50%: 13225.1 - 99%: 13791.2 - 99.9%: 13852.1 - Max: 14115.1
+11:43:58.627 [main] INFO - Pub rate  1958.4 msg/s /  1.9 Mb/s | Cons rate  1586.5 msg/s /  1.5 Mb/s | Backlog: 41.5 K | Pub Latency (ms) avg: 14814.7 - 50%: 14604.8 - 99%: 16124.3 - 99.9%: 16134.7 - Max: 16182.7
+11:44:08.833 [main] INFO - Pub rate  2332.8 msg/s /  2.3 Mb/s | Cons rate  1876.1 msg/s /  1.8 Mb/s | Backlog: 46.1 K | Pub Latency (ms) avg: 15965.7 - 50%: 15944.1 - 99%: 16619.1 - 99.9%: 16623.3 - Max: 16677.1
+11:44:19.001 [main] INFO - Pub rate  2367.3 msg/s /  2.3 Mb/s | Cons rate  1983.0 msg/s /  1.9 Mb/s | Backlog: 50.0 K | Pub Latency (ms) avg: 14322.8 - 50%: 14333.2 - 99%: 15241.6 - 99.9%: 15244.9 - Max: 15293.2
+11:44:29.191 [main] INFO - Pub rate  2448.8 msg/s /  2.4 Mb/s | Cons rate  1978.8 msg/s /  1.9 Mb/s | Backlog: 54.8 K | Pub Latency (ms) avg: 12866.1 - 50%: 13129.0 - 99%: 13785.8 - 99.9%: 13787.1 - Max: 13841.5
+11:44:39.371 [main] INFO - Pub rate  2400.5 msg/s /  2.3 Mb/s | Cons rate  1979.8 msg/s /  1.9 Mb/s | Backlog: 59.1 K | Pub Latency (ms) avg: 13145.6 - 50%: 13201.9 - 99%: 13587.7 - 99.9%: 13624.9 - Max: 13647.9
+11:44:49.530 [main] INFO - Pub rate  2098.0 msg/s /  2.0 Mb/s | Cons rate  1886.9 msg/s /  1.8 Mb/s | Backlog: 61.2 K | Pub Latency (ms) avg: 14278.8 - 50%: 14277.8 - 99%: 14577.1 - 99.9%: 14710.0 - Max: 14756.5
+11:44:59.768 [main] INFO - Pub rate  2127.7 msg/s /  2.1 Mb/s | Cons rate  2164.5 msg/s /  2.1 Mb/s | Backlog: 60.9 K | Pub Latency (ms) avg: 14945.2 - 50%: 15046.0 - 99%: 15883.8 - 99.9%: 15890.5 - Max: 15935.1
+11:45:09.912 [main] INFO - Pub rate  2471.3 msg/s /  2.4 Mb/s | Cons rate  2086.3 msg/s /  2.0 Mb/s | Backlog: 64.8 K | Pub Latency (ms) avg: 14325.9 - 50%: 14215.2 - 99%: 15281.7 - 99.9%: 15295.7 - Max: 15326.9
+11:45:20.070 [main] INFO - Pub rate  2245.3 msg/s /  2.2 Mb/s | Cons rate  2183.3 msg/s /  2.1 Mb/s | Backlog: 65.4 K | Pub Latency (ms) avg: 13813.7 - 50%: 13694.8 - 99%: 15053.9 - 99.9%: 15066.0 - Max: 15117.6
+11:45:30.279 [main] INFO - Pub rate  2137.1 msg/s /  2.1 Mb/s | Cons rate  2174.2 msg/s /  2.1 Mb/s | Backlog: 65.0 K | Pub Latency (ms) avg: 14202.2 - 50%: 14199.7 - 99%: 14969.0 - 99.9%: 14974.9 - Max: 15027.1
+11:45:40.477 [main] INFO - Pub rate  2161.9 msg/s /  2.1 Mb/s | Cons rate  1976.6 msg/s /  1.9 Mb/s | Backlog: 66.9 K | Pub Latency (ms) avg: 15523.9 - 50%: 15317.6 - 99%: 16534.5 - 99.9%: 16539.3 - Max: 16593.5
+11:45:50.705 [main] INFO - Pub rate  1810.0 msg/s /  1.8 Mb/s | Cons rate  2265.6 msg/s /  2.2 Mb/s | Backlog: 62.2 K | Pub Latency (ms) avg: 15789.6 - 50%: 15697.1 - 99%: 16260.6 - 99.9%: 16261.6 - Max: 16317.1
+11:46:00.858 [main] INFO - Pub rate  1887.3 msg/s /  1.8 Mb/s | Cons rate  2185.2 msg/s /  2.1 Mb/s | Backlog: 59.2 K | Pub Latency (ms) avg: 17547.6 - 50%: 17500.0 - 99%: 18461.7 - 99.9%: 18468.7 - Max: 18513.4
+11:46:11.137 [main] INFO - Pub rate  2026.1 msg/s /  2.0 Mb/s | Cons rate  2161.2 msg/s /  2.1 Mb/s | Backlog: 57.8 K | Pub Latency (ms) avg: 16301.1 - 50%: 16498.8 - 99%: 17211.6 - 99.9%: 17219.6 - Max: 17265.5
+11:46:21.369 [main] INFO - Pub rate  2150.9 msg/s /  2.1 Mb/s | Cons rate  1868.2 msg/s /  1.8 Mb/s | Backlog: 60.7 K | Pub Latency (ms) avg: 15526.9 - 50%: 15592.2 - 99%: 16542.5 - 99.9%: 16544.4 - Max: 16598.9
+11:46:31.566 [main] INFO - Pub rate  2363.9 msg/s /  2.3 Mb/s | Cons rate  2079.3 msg/s /  2.0 Mb/s | Backlog: 63.6 K | Pub Latency (ms) avg: 14169.0 - 50%: 14206.9 - 99%: 15266.8 - 99.9%: 15274.4 - Max: 15323.6
+11:46:41.792 [main] INFO - Pub rate  2388.4 msg/s /  2.3 Mb/s | Cons rate  1969.8 msg/s /  1.9 Mb/s | Backlog: 67.9 K | Pub Latency (ms) avg: 13705.8 - 50%: 13538.6 - 99%: 14732.3 - 99.9%: 14753.3 - Max: 14790.8
+11:46:51.990 [main] INFO - Pub rate  2099.4 msg/s /  2.1 Mb/s | Cons rate  2074.7 msg/s /  2.0 Mb/s | Backlog: 68.2 K | Pub Latency (ms) avg: 14704.9 - 50%: 14733.2 - 99%: 15301.2 - 99.9%: 15303.4 - Max: 15350.0
+11:47:02.250 [main] INFO - Pub rate  2320.0 msg/s /  2.3 Mb/s | Cons rate  2110.9 msg/s /  2.1 Mb/s | Backlog: 70.3 K | Pub Latency (ms) avg: 15162.4 - 50%: 15532.7 - 99%: 16811.9 - 99.9%: 16823.2 - Max: 16874.8
+11:47:12.454 [main] INFO - Pub rate  2163.3 msg/s /  2.1 Mb/s | Cons rate  2225.5 msg/s /  2.2 Mb/s | Backlog: 69.7 K | Pub Latency (ms) avg: 13845.9 - 50%: 13792.8 - 99%: 15144.4 - 99.9%: 15167.4 - Max: 15210.4
+11:47:22.590 [main] INFO - Pub rate  1986.6 msg/s /  1.9 Mb/s | Cons rate  2085.9 msg/s /  2.0 Mb/s | Backlog: 68.7 K | Pub Latency (ms) avg: 15350.3 - 50%: 15428.2 - 99%: 16082.5 - 99.9%: 16116.9 - Max: 16174.2
+11:47:32.796 [main] INFO - Pub rate  2395.6 msg/s /  2.3 Mb/s | Cons rate  2173.3 msg/s /  2.1 Mb/s | Backlog: 70.9 K | Pub Latency (ms) avg: 14773.8 - 50%: 14893.6 - 99%: 16085.6 - 99.9%: 16088.8 - Max: 16138.4
+11:47:42.944 [main] INFO - Pub rate  2284.2 msg/s /  2.2 Mb/s | Cons rate  2048.3 msg/s /  2.0 Mb/s | Backlog: 73.3 K | Pub Latency (ms) avg: 13600.7 - 50%: 13437.9 - 99%: 14495.0 - 99.9%: 14504.4 - Max: 14561.2
+11:47:53.169 [main] INFO - Pub rate  2785.3 msg/s /  2.7 Mb/s | Cons rate  1774.7 msg/s /  1.7 Mb/s | Backlog: 83.7 K | Pub Latency (ms) avg: 13043.6 - 50%: 13119.2 - 99%: 13814.7 - 99.9%: 14040.8 - Max: 14257.7
+11:48:03.312 [main] INFO - Pub rate  2597.6 msg/s /  2.5 Mb/s | Cons rate  1690.3 msg/s /  1.7 Mb/s | Backlog: 92.9 K | Pub Latency (ms) avg: 12027.0 - 50%: 12115.1 - 99%: 12505.0 - 99.9%: 12508.7 - Max: 12553.5
+11:48:13.465 [main] INFO - Pub rate  2394.2 msg/s /  2.3 Mb/s | Cons rate  1786.3 msg/s /  1.7 Mb/s | Backlog: 99.0 K | Pub Latency (ms) avg: 12699.2 - 50%: 12738.0 - 99%: 12874.2 - 99.9%: 12902.4 - Max: 12909.2
+11:48:23.622 [main] INFO - Pub rate  2369.5 msg/s /  2.3 Mb/s | Cons rate  1786.5 msg/s /  1.7 Mb/s | Backlog: 105.0 K | Pub Latency (ms) avg: 12862.3 - 50%: 12977.7 - 99%: 13289.8 - 99.9%: 13310.2 - Max: 13315.1
+11:48:33.798 [main] INFO - Pub rate  2403.0 msg/s /  2.3 Mb/s | Cons rate  1684.5 msg/s /  1.6 Mb/s | Backlog: 112.3 K | Pub Latency (ms) avg: 13147.4 - 50%: 13059.6 - 99%: 13540.4 - 99.9%: 13563.2 - Max: 13585.4
+11:48:43.969 [main] INFO - Pub rate  2491.6 msg/s /  2.4 Mb/s | Cons rate  1785.0 msg/s /  1.7 Mb/s | Backlog: 119.4 K | Pub Latency (ms) avg: 13237.8 - 50%: 13237.8 - 99%: 13571.0 - 99.9%: 13585.9 - Max: 13605.2
+11:48:54.127 [main] INFO - Pub rate  2280.1 msg/s /  2.2 Mb/s | Cons rate  1784.4 msg/s /  1.7 Mb/s | Backlog: 124.5 K | Pub Latency (ms) avg: 13542.1 - 50%: 13534.1 - 99%: 14208.5 - 99.9%: 14221.2 - Max: 14267.7
+11:49:04.281 [main] INFO - Pub rate  2209.1 msg/s /  2.2 Mb/s | Cons rate  1687.9 msg/s /  1.6 Mb/s | Backlog: 129.8 K | Pub Latency (ms) avg: 14211.3 - 50%: 14168.8 - 99%: 14698.4 - 99.9%: 14715.1 - Max: 14795.7
+11:49:14.427 [main] INFO - Pub rate  2396.7 msg/s /  2.3 Mb/s | Cons rate  2086.2 msg/s /  2.0 Mb/s | Backlog: 132.9 K | Pub Latency (ms) avg: 14382.8 - 50%: 14492.4 - 99%: 14866.9 - 99.9%: 14871.6 - Max: 14930.0
+11:49:24.591 [main] INFO - Pub rate  1735.6 msg/s /  1.7 Mb/s | Cons rate  2082.7 msg/s /  2.0 Mb/s | Backlog: 129.4 K | Pub Latency (ms) avg: 14692.6 - 50%: 14683.7 - 99%: 16167.6 - 99.9%: 16228.3 - Max: 16273.9
+11:49:34.775 [main] INFO - Pub rate  2167.6 msg/s /  2.1 Mb/s | Cons rate  1882.7 msg/s /  1.8 Mb/s | Backlog: 132.3 K | Pub Latency (ms) avg: 16765.0 - 50%: 16606.9 - 99%: 17718.9 - 99.9%: 17721.5 - Max: 17774.0
+11:49:45.329 [main] INFO - Pub rate  2291.1 msg/s /  2.2 Mb/s | Cons rate  1718.3 msg/s /  1.7 Mb/s | Backlog: 138.3 K | Pub Latency (ms) avg: 14493.8 - 50%: 14548.4 - 99%: 16379.0 - 99.9%: 16379.6 - Max: 16426.9
+11:49:55.492 [main] INFO - Pub rate  2107.0 msg/s /  2.1 Mb/s | Cons rate  2082.2 msg/s /  2.0 Mb/s | Backlog: 138.6 K | Pub Latency (ms) avg: 14589.9 - 50%: 14629.1 - 99%: 14973.4 - 99.9%: 14979.5 - Max: 15030.7
+11:50:05.744 [main] INFO - Pub rate  1619.7 msg/s /  1.6 Mb/s | Cons rate  1879.3 msg/s /  1.8 Mb/s | Backlog: 136.0 K | Pub Latency (ms) avg: 16696.0 - 50%: 16831.7 - 99%: 17691.4 - 99.9%: 17702.4 - Max: 17751.7
+11:50:16.143 [main] INFO - Pub rate  1667.1 msg/s /  1.6 Mb/s | Cons rate  1836.2 msg/s /  1.8 Mb/s | Backlog: 134.2 K | Pub Latency (ms) avg: 18587.3 - 50%: 18377.5 - 99%: 19873.0 - 99.9%: 19934.6 - Max: 20071.4
+11:50:26.447 [main] INFO - Pub rate  2370.7 msg/s /  2.3 Mb/s | Cons rate  1661.9 msg/s /  1.6 Mb/s | Backlog: 141.5 K | Pub Latency (ms) avg: 17242.3 - 50%: 16943.7 - 99%: 19889.0 - 99.9%: 19889.7 - Max: 20230.9
+11:50:36.738 [main] INFO - Pub rate  2163.4 msg/s /  2.1 Mb/s | Cons rate  1955.7 msg/s /  1.9 Mb/s | Backlog: 143.6 K | Pub Latency (ms) avg: 13462.9 - 50%: 13445.9 - 99%: 15578.2 - 99.9%: 15583.4 - Max: 15624.8
+11:50:46.890 [main] INFO - Pub rate  2108.7 msg/s /  2.1 Mb/s | Cons rate  2183.1 msg/s /  2.1 Mb/s | Backlog: 142.9 K | Pub Latency (ms) avg: 15677.4 - 50%: 15346.1 - 99%: 16789.1 - 99.9%: 16789.8 - Max: 16844.9
+11:50:57.039 [main] INFO - Pub rate  1812.7 msg/s /  1.8 Mb/s | Cons rate  2085.9 msg/s /  2.0 Mb/s | Backlog: 140.1 K | Pub Latency (ms) avg: 16036.3 - 50%: 16095.7 - 99%: 16729.5 - 99.9%: 16738.4 - Max: 16811.8
+11:51:07.187 [main] INFO - Pub rate  2185.1 msg/s /  2.1 Mb/s | Cons rate  1886.3 msg/s /  1.8 Mb/s | Backlog: 143.1 K | Pub Latency (ms) avg: 16211.0 - 50%: 16259.3 - 99%: 17309.2 - 99.9%: 17316.5 - Max: 17363.5
+11:51:17.371 [main] INFO - Pub rate  2352.7 msg/s /  2.3 Mb/s | Cons rate  1882.9 msg/s /  1.8 Mb/s | Backlog: 147.9 K | Pub Latency (ms) avg: 14830.9 - 50%: 14644.3 - 99%: 16767.4 - 99.9%: 16770.3 - Max: 16827.1
+11:51:27.544 [main] INFO - Pub rate  1721.1 msg/s /  1.7 Mb/s | Cons rate  1882.1 msg/s /  1.8 Mb/s | Backlog: 146.3 K | Pub Latency (ms) avg: 14379.5 - 50%: 13803.6 - 99%: 16320.6 - 99.9%: 16323.1 - Max: 16369.3
+11:51:37.728 [main] INFO - Pub rate  1743.9 msg/s /  1.7 Mb/s | Cons rate  1978.9 msg/s /  1.9 Mb/s | Backlog: 143.9 K | Pub Latency (ms) avg: 16451.9 - 50%: 16252.2 - 99%: 17877.2 - 99.9%: 18752.1 - Max: 18859.9
+11:51:47.889 [main] INFO - Pub rate  2045.9 msg/s /  2.0 Mb/s | Cons rate  2182.3 msg/s /  2.1 Mb/s | Backlog: 142.5 K | Pub Latency (ms) avg: 18367.0 - 50%: 18329.1 - 99%: 19461.9 - 99.9%: 19472.4 - Max: 19508.0
+11:51:58.067 [main] INFO - Pub rate  1870.2 msg/s /  1.8 Mb/s | Cons rate  2080.8 msg/s /  2.0 Mb/s | Backlog: 140.4 K | Pub Latency (ms) avg: 16633.8 - 50%: 16859.9 - 99%: 18288.5 - 99.9%: 18311.3 - Max: 18469.8
+11:52:08.348 [main] INFO - Pub rate  2248.8 msg/s /  2.2 Mb/s | Cons rate  2063.7 msg/s /  2.0 Mb/s | Backlog: 142.3 K | Pub Latency (ms) avg: 16140.6 - 50%: 15936.4 - 99%: 17205.5 - 99.9%: 17223.9 - Max: 17250.9
+11:52:18.938 [main] INFO - Pub rate  1932.5 msg/s /  1.9 Mb/s | Cons rate  1527.7 msg/s /  1.5 Mb/s | Backlog: 146.5 K | Pub Latency (ms) avg: 15561.2 - 50%: 15796.3 - 99%: 16744.0 - 99.9%: 16746.4 - Max: 16903.6
+11:52:29.195 [main] INFO - Pub rate  2248.4 msg/s /  2.2 Mb/s | Cons rate  1955.1 msg/s /  1.9 Mb/s | Backlog: 149.6 K | Pub Latency (ms) avg: 16066.8 - 50%: 16073.2 - 99%: 16643.8 - 99.9%: 16649.9 - Max: 16704.3
+11:52:39.566 [main] INFO - Pub rate  1867.9 msg/s /  1.8 Mb/s | Cons rate  1953.3 msg/s /  1.9 Mb/s | Backlog: 148.7 K | Pub Latency (ms) avg: 15042.4 - 50%: 14981.7 - 99%: 16364.2 - 99.9%: 16377.9 - Max: 16479.4
+11:52:49.948 [main] INFO - Pub rate  2030.7 msg/s /  2.0 Mb/s | Cons rate  2127.4 msg/s /  2.1 Mb/s | Backlog: 147.7 K | Pub Latency (ms) avg: 16322.5 - 50%: 16278.5 - 99%: 17050.2 - 99.9%: 17053.2 - Max: 17100.0
+11:53:00.179 [main] INFO - Pub rate  1896.5 msg/s /  1.9 Mb/s | Cons rate  2216.4 msg/s /  2.2 Mb/s | Backlog: 144.4 K | Pub Latency (ms) avg: 16334.8 - 50%: 16466.6 - 99%: 17173.5 - 99.9%: 17182.1 - Max: 17240.3
+11:53:10.455 [main] INFO - Pub rate  1630.4 msg/s /  1.6 Mb/s | Cons rate  2010.8 msg/s /  2.0 Mb/s | Backlog: 140.5 K | Pub Latency (ms) avg: 18662.5 - 50%: 18584.3 - 99%: 20191.7 - 99.9%: 20205.4 - Max: 20271.2
+11:53:20.724 [main] INFO - Pub rate  1832.2 msg/s /  1.8 Mb/s | Cons rate  2065.8 msg/s /  2.0 Mb/s | Backlog: 138.1 K | Pub Latency (ms) avg: 19079.0 - 50%: 19135.9 - 99%: 20193.9 - 99.9%: 20194.8 - Max: 20224.5
+11:53:30.959 [main] INFO - Pub rate  1907.8 msg/s /  1.9 Mb/s | Cons rate  1969.4 msg/s /  1.9 Mb/s | Backlog: 137.5 K | Pub Latency (ms) avg: 15957.3 - 50%: 15927.9 - 99%: 18064.4 - 99.9%: 18068.4 - Max: 18114.7
+11:53:41.211 [main] INFO - Pub rate  1780.1 msg/s /  1.7 Mb/s | Cons rate  1767.9 msg/s /  1.7 Mb/s | Backlog: 137.6 K | Pub Latency (ms) avg: 17590.9 - 50%: 17528.7 - 99%: 18593.5 - 99.9%: 18601.0 - Max: 18647.0
+11:53:51.561 [main] INFO - Pub rate  1303.1 msg/s /  1.3 Mb/s | Cons rate  1851.2 msg/s /  1.8 Mb/s | Backlog: 131.9 K | Pub Latency (ms) avg: 20598.7 - 50%: 20647.8 - 99%: 21530.9 - 99.9%: 21609.3 - Max: 21666.0
+11:54:02.012 [main] INFO - Pub rate  1929.4 msg/s /  1.9 Mb/s | Cons rate  2025.9 msg/s /  2.0 Mb/s | Backlog: 130.9 K | Pub Latency (ms) avg: 19952.3 - 50%: 19963.3 - 99%: 21449.9 - 99.9%: 21548.0 - Max: 21595.9
+11:54:12.243 [main] INFO - Pub rate  1391.6 msg/s /  1.4 Mb/s | Cons rate  1674.8 msg/s /  1.6 Mb/s | Backlog: 128.0 K | Pub Latency (ms) avg: 19254.8 - 50%: 19111.6 - 99%: 20377.3 - 99.9%: 20399.7 - Max: 20441.7
+11:54:22.428 [main] INFO - Pub rate  2100.0 msg/s /  2.1 Mb/s | Cons rate  2075.3 msg/s /  2.0 Mb/s | Backlog: 128.3 K | Pub Latency (ms) avg: 19471.0 - 50%: 19498.8 - 99%: 20519.9 - 99.9%: 20527.2 - Max: 20562.0
+11:54:32.600 [main] INFO - Pub rate  2007.4 msg/s /  2.0 Mb/s | Cons rate  1883.5 msg/s /  1.8 Mb/s | Backlog: 129.5 K | Pub Latency (ms) avg: 16941.5 - 50%: 17078.4 - 99%: 18322.4 - 99.9%: 18329.6 - Max: 18391.2
+11:54:42.819 [main] INFO - Pub rate  2591.6 msg/s /  2.5 Mb/s | Cons rate  1875.8 msg/s /  1.8 Mb/s | Backlog: 136.8 K | Pub Latency (ms) avg: 13947.1 - 50%: 14514.7 - 99%: 15931.7 - 99.9%: 16014.1 - Max: 16121.2
+11:54:52.984 [main] INFO - Pub rate  2080.3 msg/s /  2.0 Mb/s | Cons rate  1931.3 msg/s /  1.9 Mb/s | Backlog: 138.4 K | Pub Latency (ms) avg: 13418.8 - 50%: 13297.0 - 99%: 14376.8 - 99.9%: 14479.3 - Max: 14512.3
+11:55:03.109 [main] INFO - Pub rate  2749.1 msg/s /  2.7 Mb/s | Cons rate  2040.5 msg/s /  2.0 Mb/s | Backlog: 145.5 K | Pub Latency (ms) avg: 14610.3 - 50%: 14785.0 - 99%: 16094.7 - 99.9%: 16122.9 - Max: 16181.1
+11:55:13.244 [main] INFO - Pub rate  4625.6 msg/s /  4.5 Mb/s | Cons rate  2586.4 msg/s /  2.5 Mb/s | Backlog: 166.2 K | Pub Latency (ms) avg: 7083.3 - 50%: 7101.5 - 99%: 12175.4 - 99.9%: 12190.7 - Max: 12222.1
+11:55:13.405 [main] INFO - ----- Aggregated Pub Latency (ms) avg: 14894.0 - 50%: 14810.3 - 95%: 18906.9 - 99%: 20191.6 - 99.9%: 21160.3 - 99.99%: 21547.8 - Max: 21666.0
+11:55:13.749 [main] INFO - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+11:55:15.171 [main] INFO - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+11:55:15.189 [main] INFO - Writing test result into 1-topic-1-partition-2500-rate-1kb-Kafka-Stg-2020-02-21-11-55-15.json
